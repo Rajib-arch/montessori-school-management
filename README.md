@@ -1,85 +1,66 @@
 # Montessori School Management Web App
 
-A comprehensive school management platform for Montessori institutions. This repository contains a starter monorepo for a full-stack web application that manages enrollment, attendance, staff, fee collection, communication, classroom scheduling, Montessori progress tracking, inventory, and reporting.
+A full-stack school administration system for Montessori institutions, built as a monorepo with a Next.js frontend and Express API.
 
-## Architecture overview
-
-- `apps/web`: Frontend web app (Next.js)
-- `apps/api`: Backend API service (Node.js + TypeScript)
-- `packages/*`: Shared utilities, types, and validation logic (future expansion)
-
-## Core modules planned
+## Features
 
 - Student enrollment and records
-- Attendance tracking
-- Class scheduling and classroom management
-- Staff management and leave tracking
-- Parent communication and announcements
-- Fee management and payment tracking
-- Montessori progress observation and portfolio tracking
-- Inventory and resources
-- Event planning and calendars
-- Reporting and analytics
+- Attendance monitoring
+- Staff and class management
+- Parent communication
+- Fee and finance tracking
+- Montessori observation and progress tracking
+- Inventory and resource planning
+- Events and announcements
+- Reporting and dashboard analytics
 
-## Suggested stack
+## Stack
 
 Frontend
 - Next.js
 - TypeScript
 - Tailwind CSS
-- React Hook Form + Zod (for validation)
 
 Backend
-- Node.js
+- Express
 - TypeScript
-- Express or NestJS
-- PostgreSQL
-- Redis (for caching and queues)
+
+## Project structure
+
+```bash
+apps/
+  web/        # Next.js frontend
+  api/        # Express backend
+```
 
 ## Getting started
 
-### Prerequisites
-
-- Node.js 18+
-- npm or pnpm
-
-### Install dependencies
-
 ```bash
 npm install
-```
-
-### Run the app
-
-```bash
 npm run dev
 ```
 
-### Build
+This starts both the frontend and the API in parallel.
 
-```bash
-npm run build
-```
+## App URLs
 
-## Repository goals
+- Frontend: http://localhost:3000
+- API: http://localhost:4000
 
-This starter is intentionally lightweight and structured so you can expand it into a complete SaaS application for school operations, with a strong emphasis on:
+## Available API endpoints
 
-- Role-based access control
-- Responsive UI for admins, teachers, and parents
-- Scalable architecture for multi-campus growth
-- Montessori-aligned observation and learning tracking
-- Secure and auditable school data workflows
+- GET /api/health
+- GET /api/summary
+- GET /api/students
+- GET /api/classes
+- GET /api/attendance
+- GET /api/staff
+- GET /api/finance
+- GET /api/observations
+- GET /api/inventory
+- GET /api/events
+- GET /api/announcements
 
-## Next steps
+## Notes
 
-1. Set up PostgreSQL schema and data models
-2. Implement authentication and RBAC
-3. Build admin dashboard and student management screens
-4. Add teacher observation module and attendance workflows
-5. Connect parent portal and fee management
-6. Extend analytics and reporting
-
----
-
-This repository is a starting point. You can evolve it into a full production-ready school management platform as requirements become clearer.
+This initial version is a working MVP with realistic mock data to support demo, onboarding, and project iteration.

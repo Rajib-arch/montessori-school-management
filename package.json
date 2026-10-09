@@ -3,13 +3,15 @@
   "private": true,
   "version": "1.0.0",
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "apps/*"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace apps/web",
-    "build": "npm run build --workspace apps/web",
-    "lint": "npm run lint --workspace apps/web",
-    "api:dev": "npm run dev --workspace apps/api"
+    "dev": "concurrently \"npm run dev --workspace apps/web\" \"npm run dev --workspace apps/api\"",
+    "build": "npm run build --workspace apps/web && npm run build --workspace apps/api",
+    "start": "concurrently \"npm run start --workspace apps/web\" \"npm run start --workspace apps/api\"",
+    "lint": "npm run lint --workspace apps/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
   }
 }
